@@ -1,9 +1,38 @@
 <html>
+<head>
+<style>
+	body { background-color:#98AFC7;
+	font-family:Cambria;
+	color:#5C5858;	
+	font-size:50;
+	text-align:center;
+	margin-left: auto;
+    	margin-right: auto;
+  	width: 10em
+	}
+	table{ font-size:30;
+	background-color:white;}
+	.button {
+    	background-color: #0e5285;
+   	border: none;
+    	color: white;
+    	padding: 15px 32px;
+    	text-align: center;
+    	text-decoration: none;
+   	display: inline-block;
+    	font-size: 16px;
+   	margin: 4px 2px;
+	cursor: pointer;}
+	
+</style>
+</head>
 
 <body>
-<form name="form1" method="post" action="check_login.php">
+<div style="background:#F9F8F6;">
+<form name="form1" method="post" action="check_login.php" >
+
   Student login<br>
-  <table border="1" style="width: 300px">
+  <p align="center"><table border="1" style="width: 300px">
     <tbody>
       <tr>
         <td> &nbsp;Username</td>
@@ -17,12 +46,14 @@
         </td>
       </tr>
     </tbody>
-  </table>
+  </table></p>
   <br>
-  <input type="submit" name="Submit" value="Login">
-</form>
+  <input type="submit" name="Submit" value="Login" class="button">
+
 <form name="form2" method="post" action="register.php">
-<input type="submit" name="Register" value="Register">
-</form>
+<input type="submit" name="Register" value="Register" class="button">
+
+</form></form>
+</div>
 </body>
 </html>
