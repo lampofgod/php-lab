@@ -50,8 +50,8 @@
       <tr>
         <td> &nbsp;Status</td>
         <td>
-            <input type="radio" name="gender" value="TEACHER">Teacher<br>
-          <input type="radio" name="gender" value="STUDENT">Student<br>
+            <input type="radio" name="ddlStatus" value="TEACHER">Teacher<br>
+          <input type="radio" name="ddlStatus" value="STUDENT">Student<br>
 </td>
       </tr>
       <tr>
