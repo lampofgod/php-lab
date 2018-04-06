@@ -1,3 +1,9 @@
+<center>
+<style>
+h1{color: red;}
+body{background-color: #bde3ff;}
+</style>
+<body>
 <?php
 	session_start();
         include("config.php");
@@ -7,14 +13,13 @@
 	$objResult = mysqli_fetch_array($objQuery);
 	if(!$objResult)
 	{
-			echo "Username and Password Incorrect!\n\n\n";
-			echo "<a href='home_test.php'><h3>back</h3></a>"; 
+			echo "<h1>Username and Password Incorrect!</h1>\n\n\n";
+			echo "<a href='home_test.php'><h3>back</h3></a>";
 	}
 	else
 	{
 			$_SESSION["UserID"] = $objResult["UserID"];
 			$_SESSION["Status"] = $objResult["Status"];
-
 			session_write_close();
 			
 			if($objResult["Status"] == "TEACHER")
@@ -28,3 +33,5 @@
 	}
 	mysqli_close($objCon);
 ?>
+</body>
+</center>
