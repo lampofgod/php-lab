@@ -1,7 +1,7 @@
 <html>
 
 <body>
-<form name="form1" method="post" action="file:///C|/Users/akaka.LAPTOP-A9P1RJ8E/Desktop/New folder/check_login.php">
+<form name="form1" method="post" action="check_login.php">
   Student login<br>
   <table border="1" style="width: 300px">
     <tbody>
@@ -20,6 +20,9 @@
   </table>
   <br>
   <input type="submit" name="Submit" value="Login">
+</form>
+<form name="form2" method="post" action="register.php">
+<input type="submit" name="Register" value="Register">
 </form>
 </body>
 </html>
