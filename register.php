@@ -1,11 +1,26 @@
 <html>
 <head>
+<style>
+.button {
+    background-color: #0e5285;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}//botton color 
+</style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-<body>
-<form name="form1" method="post" action="save_register.php">
-  Register<br>
-  <table width="400" border="1" style="width: 400px">
+<body bgcolor="#bde3ff">
+<form name="form1" method="post" action="save_register.php" >
+<p align="center">
+  <img src="1.png" VSPACE="80" ></img> </center>
+  <table width="400" border="1" style="width: 400px" align="center" bgcolor="white">
     <tbody>
       <tr>
         <td width="125"> &nbsp;Username</td>
@@ -57,9 +72,8 @@
     </tbody>
   </table>
   <br>
-  <input type="submit" name="Submit" value="Save">
-   
-  <input type="reset" name="Reset" value="Reset">
+  <input type="submit" name="Submit" value="Save" align="center" class="button"> 
+  <input type="reset" name="Reset" value="Reset" align="center" class="button">
 </form>
 </body>
 </html>
