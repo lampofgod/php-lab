@@ -6,6 +6,7 @@ div{
 	width: 800px;
 	height: 250px;
 	border: 3px solid #0e5285;
+	background-color: white;
 
 }//table
 .button {
@@ -30,7 +31,7 @@ h3{
 <title>Untitled Document</title>
 </head>
 
-<body>
+<body bgcolor="#bde3ff">
 
 <form name="form1" method="post" action="save_create_class.php">
 
