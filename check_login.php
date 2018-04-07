@@ -14,7 +14,7 @@ body{background-color: #bde3ff;}
 	if(!$objResult)
 	{
 			echo "<h1>Username and Password Incorrect!</h1>\n\n\n";
-			echo "<a href='home_test.php'><h3>back</h3></a>";
+			echo '<a href="home_test.php"><img src="back1.png"/></a>';
 	}
 	else
 	{
