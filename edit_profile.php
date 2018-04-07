@@ -15,12 +15,26 @@ include("config.php");
 ?>
 <html>
 <head>
+<style>
+.button {
+    background-color: #0e5285;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}//botton color
+</style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-<body>
+<body bgcolor="#bde3ff">
 <form name="form1" method="post" action="save_profile.php">
-  Edit Profile! <br>
-  <table width="400" border="1" style="width: 400px">
+  <center><img src="editpro.png" VSPACE="50" ></center></img><br>
+  <table width="400" border="1" style="width: 400px" bgcolor="white" color="#0e5285" align="center">
     <tbody>
       <tr>
         <td width="125"> &nbsp;UserID</td>
@@ -73,7 +87,7 @@ include("config.php");
     </tbody>
   </table>
   <br>
-  <input type="submit" name="Submit" value="Save">
+  <center><input type="submit" name="Submit" value="Save" class="button"></center>
 </form>
 </body>
 </html>
