@@ -4,7 +4,7 @@
 <style>
 .button {
     background-color: #0e5285;
-    width: 15%;
+    width: 12%;
     border: none;
     color: white;
     padding: 15px 40px;
