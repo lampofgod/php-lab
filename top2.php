@@ -4,7 +4,7 @@
 <style>
 .button {
     background-color: #0e5285;
-    width: 14%;
+    width: 12%;
     border: none;
     color: white;
     padding: 15px 40px;
@@ -12,7 +12,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: -7px 7px;
+    margin: -7px 2px;
     cursor: pointer;
 }//botton color 
 </style>
@@ -22,7 +22,7 @@
 
 
 <body bgcolor="#bde3ff"> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="announcement.php"> <input  value="Announcement" align="center"    class="button" target="mainFrame"></a>
 <a href="work.php">			<input  value="Work"		 align="center"    class="button" target="mainFrame"></a>
 <a href="student_frame.php"><input  value="Student" 	 align="center"    class="button" target="mainFrame"></a>
