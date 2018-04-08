@@ -1,3 +1,6 @@
+<html>
+<body>
+<div align="center">
 <?php
 	session_start();
         include("config.php");
@@ -6,22 +9,26 @@
 	$objResult = mysqli_fetch_array($objQuery);
 	if(!$objResult)
 	{
-			echo "Class code Incorrect!\n\n\n";
-			echo "<a href='add_class.php'><h3>back</h3></a>"; 
+		echo "<font face=\"Cambria\" size=\"5\"color=\"0e5285\">Class code Incorrect!\n\n\n</font>";
+		echo '<br><br><a href="add_class.php"><img src="back.png"/></a>';
+
 	}
 	else
 	{
-			$_SESSION["Classcode"] = $objResult["Classcode"];
-
-			session_write_close();
+		$_SESSION["Classcode"] = $objResult["Classcode"];
+		session_write_close();
 			
-			if($objResult["Status"] == "TEACHER")
-			{
-				header("location:display_t.php");
-			}
-			else
-			{
-				header("location:display_s.php");
-			}
+		if($objResult["Status"] == "TEACHER")
+		{
+			header("location:display_t.php");
+		}
+		else
+		{
+			header("location:display_s.php");
+		}
 	}
 	mysqli_close($objCon);
+?>
+</div>
+</body>
+</html>
