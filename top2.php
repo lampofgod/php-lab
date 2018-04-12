@@ -19,15 +19,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
-
-
 <body bgcolor="#bde3ff"> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="announcement.php"> <input  value="Announcement" align="center"    class="button" target="mainFrame"></a>
-<a href="work.php">			<input  value="Work"		 align="center"    class="button" target="mainFrame"></a>
-<a href="student_frame.php"><input  value="Student" 	 align="center"    class="button" target="mainFrame"></a>
-<a href="file.php">			<input  value="File"		 align="center"    class="button" target="mainFrame"></a>
-<a href="Blog.php">			<input  value="Blog" 		 align="center"    class="button" target="mainFrame"></a>
-
+<a href="announcement.php"target="mainFrame"> <input  value="Announcement" align="center"    class="button" ></a>
+<a href="work_t.php"target="mainFrame">			<input  value="Work"		 align="center"    class="button" ></a>
+<a href="student_frame.php"target="mainFrame"><input  value="Student" 	 align="center"    class="button" ></a>
+<a href="file.php"target="mainFrame">			<input  value="File"		 align="center"    class="button" ></a>
+<a href="Blog.php"target="mainFrame">			<input  value="Blog" 		 align="center"    class="button" ></a>
 </body>
 </html>
