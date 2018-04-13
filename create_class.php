@@ -38,9 +38,11 @@ h3{
 <center><div><br>
 
 <h3>Create class</h3>
+Enter UserID <br /><input name="UserID" type="text" id="UserID" size="6"><br />
+Enter Classcode <br /><input name="Classcode" type="text" id="Classcode" size="6"><br />
 Class name <br /><input name="Classname" type="text" id="Classname" size="100"><br />
-About class <br /><input name="Aboutclass" type="text" id="Aboutclass" size="100"><br /><br>
-<input type="submit" name="Submit" value="Save" class="button"></div></center></form>
+About class <br /><input name="Aboutclass" type="text" id="Aboutclass" size="100"><br />
+<input type="submit" name="Submit" value="Save"></form>
 
 </body>
 </html>
