@@ -6,5 +6,7 @@
 </head>
 
 <body>
-<button type = "button" onclick="window.open('add_ann.php','','width=400,height=400'); return false;"> +ADD </button></body>
+<center>
+<button type = "button" onclick=window.open('add_ann.php','','width=700,height=450'); return false;">+ADD</button></body>
+</center>
 </html>
