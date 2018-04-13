@@ -1,32 +1,30 @@
-<html>
-<body>
-<div align="center">
 <?php
 	include("config.php");
-	if(trim($_POST["Classname"]) == "")
+	if(trim($_POST["Classcode"]) == "")
 	{
-		echo "<font face=\"Cambria\" size=\"5\"color=\"0e5285\">Please input Classname!</font>";
+		echo "Please input Classcode !";
 		exit();	
 	}
-	$strSQL = "SELECT * FROM classroom WHERE Classname = '".trim($_POST['Classname'])."' ";
+	
+	if(trim($_POST["Classname"]) == "")
+	{
+		echo "Please input Classname!";
+		exit();	
+	}
+	$strSQL = "SELECT * FROM classroom WHERE Classcode = '".trim($_POST['Classcode'])."' ";
 	$objQuery = mysqli_query($objCon,$strSQL);
 	$objResult = mysqli_fetch_array($objQuery);
 	if($objResult)
 	{
-		echo "<font face=\"Cambria\" size=\"5\"color=\"0e5285\">Class has been create already !</font>";
+			echo "Classcode has been create already !";
 	}
 	else
-	{		
-		$strSQL = "INSERT INTO classroom (Classname,Aboutclass) VALUES ('".$_POST["Classname"]."', 
-		'".$_POST["Aboutclass"]."')";
+	{   		
+		$strSQL = "INSERT INTO classroom (Classcode,Classname,Aboutclass,UserID) VALUES ('".$_POST["Classcode"]."', '".$_POST["Classname"]."', '".$_POST["Aboutclass"]."', '".$_POST['UserID']."')";
 		$objQuery = mysqli_query($objCon,$strSQL);
-		
-		echo "<font face=\"Cambria\" size=\"5\"color=\"0e5285\">Create Completed!<br></font>";
-		echo "<br><font face=\"Cambria\" color=\"062144\"> Go to <a href='display_t.php'>your class room</a></font>";
-}
+		echo "Create Completed!<br>";
+		$_SESSION["Classcode"] = $objResult["Classcode"];
+		session_write_close();
+		echo "<br> Go to  <a href='add_class.php'>your class room</a>";}
 	mysqli_close($objCon);
 ?>
-
-</div>
-</body>
-</html>
