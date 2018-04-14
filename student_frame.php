@@ -4,16 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
+<p align="center"><font face='Cambria' color='black' size='6'><b>Student in Classroom</b></font></p> 
 <?php
-
 include("config.php");  
  $strSQL = "SELECT * FROM member WHERE Status = 'STUDENT'" or die("Error:" . mysqli_error()); 
 $objQuery = mysqli_query($objCon,$strSQL);
 	
- 
-echo "<table border='1' align='center' width='500'>";
-
-echo "<tr align='center' bgcolor='#CCCCCC'><td>รหัส</td><td>ชื่อ</td><td>นามสกุล</td><td>อีเมล์</td><td>สถานะ</td></tr>";
+echo "<table border='1' align='center' width='500'bgcolor='#E6E6FA'>";
+echo "<tr align='center' bgcolor='#006699'><td><font face='Cambria' color='white' size='3'>รหัส</font></td><td><font face='Cambria' color='white' size='3'>ชื่อ</font></td><td><font face='Cambria' color='white' size='3'>นามสกุล</font></td><td><font face='Cambria' color='white' size='3'>อีเมล์</font></td><td><font face='Cambria' color='white' size='3'>สถานะ</font></td></tr>";
 while($row = mysqli_fetch_array($objQuery)) { 
   echo "<tr>";
   echo "<td>" .$row["UserID"] .  "</td> "; 
@@ -21,11 +19,9 @@ while($row = mysqli_fetch_array($objQuery)) {
   echo "<td>" .$row["txtLastName"] .  "</td> ";
   echo "<td>" .$row["txtEmail"] .  "</td> ";
   echo "<td>" .$row["Status"] .  "</td> ";
-
   echo "</tr>";
 }
 echo "</table>";
-
 mysqli_close($objCon);
 ?>
 
