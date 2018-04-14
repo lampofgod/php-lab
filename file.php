@@ -7,31 +7,31 @@
 <body>
 <form action="add_file_db.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
   <p>&nbsp;</p>
-  <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" >
     <tr>
-      <td height="40" colspan="2" align="center" bgcolor="#D6D6D6">Form Upload&nbsp;File</td>
+      <td height="40" colspan="2" align="center" bgcolor="#006699"><font face="Cambria" color="white" size="6">Form Upload File</font></td>
     </tr>
     <tr>
-      <td width="126" bgcolor="#EDEDED">&nbsp;</td>
-      <td width="574" bgcolor="#EDEDED">&nbsp;</td>
+      <td width="126" bgcolor="#99CCCC">&nbsp;</td>
+      <td width="574" bgcolor="#99CCCC">&nbsp;</td>
     </tr>
     <tr>
-      <td align="center" bgcolor="#EDEDED">File Browser</td>
-      <td bgcolor="#EDEDED"><label>
+      <td align="center" bgcolor="#99CCCC"><font face="Cambria" color="white" size="4">File Browser</font></td>
+      <td bgcolor="#99CCCC"><label>
         <input type="file" name="fileupload" id="fileupload"  required="required"/>
       </label></td>
     </tr>
     <tr>
-      <td bgcolor="#EDEDED">&nbsp;</td>
-      <td bgcolor="#EDEDED">&nbsp;</td>
+      <td bgcolor="#99CCCC">&nbsp;</td>
+      <td bgcolor="#99CCCC">&nbsp;</td>
     </tr>
     <tr>
-      <td bgcolor="#EDEDED">&nbsp;</td>
-      <td bgcolor="#EDEDED"><input type="submit" name="button" id="button" value="Upload" /></td>
+      <td bgcolor="#99CCCC">&nbsp;</td>
+      <td bgcolor="#99CCCC"><input type="submit" name="button" id="button" value="Upload" /></td>
     </tr>
     <tr>
-      <td bgcolor="#EDEDED">&nbsp;</td>
-      <td bgcolor="#EDEDED">&nbsp;</td>
+      <td bgcolor="#99CCCC">&nbsp;</td>
+      <td bgcolor="#99CCCC">&nbsp;</td>
     </tr>
   </table>
   <p>&nbsp;</p>
@@ -41,13 +41,15 @@ include('connection.php');
 $query = "SELECT * FROM uploadfile ORDER BY fileID asc" or die("Error:" . mysqli_error()); 
 $result = mysqli_query($con, $query); 
 echo "<table border='1' align='center' width='500'>";
-echo "<tr align='center' bgcolor='#CCCCCC'><td>File ID</td><td>File</td><td>date_create</td></tr>";
+echo "<tr align='center' bgcolor='#006699'><td><font face='Cambria' color='white' size='4'> File ID </font></td>
+											<td><font face='Cambria' color='white' size='4'>File</font></td>
+											<td><font face='Cambria' color='white' size='4'>date_create</font></td></tr>";
 while($row = mysqli_fetch_array($result)) { 
   echo "<tr>";
-  echo "<td align='center'>" .$row["fileID"] .  "</td> "; ?>
+  echo "<td align='center' bgcolor='#E6E6FA' >" .$row["fileID"] .  "</td> "; ?>
   <td><center><a href="fileupload/<?php echo $row["fileupload"];?>"><?php echo $row["fileupload"];?></a></center></td>
   <?php
-  echo "<td align='center'>" .$row["dateup"] .  "</td> ";
+  echo "<td align='center' bgcolor='#E6E6FA'>" .$row["dateup"] .  "</td> ";
   echo "</tr>";
 }
 echo "</table>";
