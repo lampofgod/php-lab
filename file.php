@@ -13,8 +13,9 @@ echo "<table border='1' align='center' width='500'>";
 echo "<tr align='center' bgcolor='#CCCCCC'><td>File ID</td><td>File</td><td>date_create</td></tr>";
 while($row = mysqli_fetch_array($result)) { 
   echo "<tr>";
-  echo "<td align='center'>" .$row["fileID"] .  "</td> "; 
-  echo "<td>"  .$row["fileupload"] . "</td> ";  
+  echo "<td align='center'>" .$row["fileID"] .  "</td> "; ?>
+  <td><center><a href="fileupload/<?php echo $row["fileupload"];?>"><?php echo $row["fileupload"];?></a></center></td>
+  <?php
   echo "<td align='center'>" .$row["dateup"] .  "</td> ";
   echo "</tr>";
 }
