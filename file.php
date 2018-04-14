@@ -5,24 +5,6 @@
 <title>UPLOAD FILE</title>
 </head>
 <body>
-<?php
-include('connection.php');
-$query = "SELECT * FROM uploadfile ORDER BY fileID asc" or die("Error:" . mysqli_error()); 
-$result = mysqli_query($con, $query); 
-echo "<table border='1' align='center' width='500'>";
-echo "<tr align='center' bgcolor='#CCCCCC'><td>File ID</td><td>File</td><td>date_create</td></tr>";
-while($row = mysqli_fetch_array($result)) { 
-  echo "<tr>";
-  echo "<td align='center'>" .$row["fileID"] .  "</td> "; ?>
-  <td><center><a href="fileupload/<?php echo $row["fileupload"];?>"><?php echo $row["fileupload"];?></a></center></td>
-  <?php
-  echo "<td align='center'>" .$row["dateup"] .  "</td> ";
-  echo "</tr>";
-}
-echo "</table>";
-mysqli_close($con);
-?>
-<br/>
 <form action="add_file_db.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
   <p>&nbsp;</p>
   <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -54,5 +36,23 @@ mysqli_close($con);
   </table>
   <p>&nbsp;</p>
 </form>
+<?php
+include('connection.php');
+$query = "SELECT * FROM uploadfile ORDER BY fileID asc" or die("Error:" . mysqli_error()); 
+$result = mysqli_query($con, $query); 
+echo "<table border='1' align='center' width='500'>";
+echo "<tr align='center' bgcolor='#CCCCCC'><td>File ID</td><td>File</td><td>date_create</td></tr>";
+while($row = mysqli_fetch_array($result)) { 
+  echo "<tr>";
+  echo "<td align='center'>" .$row["fileID"] .  "</td> "; ?>
+  <td><center><a href="fileupload/<?php echo $row["fileupload"];?>"><?php echo $row["fileupload"];?></a></center></td>
+  <?php
+  echo "<td align='center'>" .$row["dateup"] .  "</td> ";
+  echo "</tr>";
+}
+echo "</table>";
+mysqli_close($con);
+?>
+<br/>
 </body>
 </html>
