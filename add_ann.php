@@ -1,31 +1,8 @@
 <html>
-<head>
-<style>
-div{ 	background-color:#F9F8F6;
-	font-family:Cambria;
-	width: 500px;
-   	height: 350px;
-	margin-top:100px;
-	background-position: center;
-}
-</style></head>
-
-<body bgcolor="#000044">
-<center>
-<div>
-<form>
+<form name="form1" method="post" action="save_add_topic.php">
 <h1>Add Your Announcement</h1>
-<table>
-<tr>
-	<td><p>Topic: <input type="text" name="topic" ></p>
-	<p>Content :</p><textarea rows="10" cols="40"></textarea></td>
-</tr>
-<tr>
-	<td><p align="center"><input type="submit" value="Add"><input type="reset" value="Reset"></p></td></tr>
-</table>
+<p>Topic:<input name="topic" type="text" id="topic"></p>
+<p>Content :</p><textarea rows="10" cols="40" name="content" id="content"></textarea>
+<p><input type="submit" value="Add"><input type="reset" value="Reset"></p>
 </form>
-</div>
-</body>
-</center>
-
-</html>  
+</html> 
