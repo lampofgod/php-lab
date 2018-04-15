@@ -13,23 +13,20 @@
 	$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 	echo $_SESSION["UserID"];
 ?>
-<button type = "button" onclick="window.open('add_ann.php','','width=400,height=400'); return false;"> +ADD </button><br /><br /><br /></body>
+<p align ="center"><button type = "button" onclick="window.open('add_ann.php','','width=400,height=400'); return false;"> +ADD NEW POST </button><br /><br /><br /></p></body>
 
 <?php
 $strSQL = "SELECT * FROM announcement" or die("Error:" . mysqli_error()); 
 $objQuery = mysqli_query($objCon,$strSQL);
-
-
 while($row = mysqli_fetch_array($objQuery)) { 
 echo "<table border='1' align='center' width='500'>";
-  echo "<tr align='left' bgcolor='#CCCCCC'>";
-  echo "<td>" .$row["topic"] .  "</td></tr>"; 
-  echo "<tr><td>" .$row["content"] .  "</td></tr> ";  
-  echo "<tr><td>โพสเมื่อ : " .$row["dateup"] .  "</td></tr>";
+  echo "<tr align='left' bgcolor='#006699'>";
+  echo "<td><font face='Cambria' color='white' size='4'>" .$row["topic"] .  "</font></td></tr>"; 
+  echo "<tr bgcolor='#E6E6FA' ><td>" .$row["content"] .  "</td></tr> ";  
+  echo "<tr bgcolor='#E6E6FA'><td>โพสเมื่อ : " .$row["dateup"] .  "</td></tr>";
   echo "</tr>";
   echo "</table><br>";
 }
-
 mysqli_close($objCon);
 	
 ?>
