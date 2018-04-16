@@ -4,7 +4,7 @@ include("config.php");
 if($_GET["Action"] == "Save")
 {
 	//*** Insert Question ***//
-	$strSQL = "INSERT INTO main_webboard ";
+	$strSQL = "INSERT INTO webboard ";
 	$strSQL .="(CreateDate,Question,Details,Name) ";
 	$strSQL .="VALUES ";
 	$strSQL .="('".date("Y-m-d H:i:s")."','".$_POST["txtQuestion"]."','".$_POST["txtDetails"]."','".$_POST["txtName"]."') ";
