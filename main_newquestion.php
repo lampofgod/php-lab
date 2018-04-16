@@ -1,25 +1,25 @@
 <?php
+date_default_timezone_set('Asia/Bangkok');
 include("config.php");
-
 if($_GET["Action"] == "Save")
 {
 	//*** Insert Question ***//
-	$strSQL = "INSERT INTO webboard ";
+	$strSQL = "INSERT INTO main_webboard ";
 	$strSQL .="(CreateDate,Question,Details,Name) ";
 	$strSQL .="VALUES ";
 	$strSQL .="('".date("Y-m-d H:i:s")."','".$_POST["txtQuestion"]."','".$_POST["txtDetails"]."','".$_POST["txtName"]."') ";
-	$objQuery = mysql_query($strSQL);
+	$objQuery = mysqli_query($objCon,$strSQL);
 	
-	header("location:Webboard.php");
+	header("location:main_webboard.php");
 }
 ?>
 <html>
 <head>
-<title>ThaiCreate.Com</title>
+<title>BLOG</title>
 </head>
 <body>
 
-<form action="NewQuestion.php?Action=Save" method="post" name="frmMain" id="frmMain">
+<form action="main_newquestion.php?Action=Save" method="post" name="frmMain" id="frmMain">
   <table width="621" border="1" cellpadding="1" cellspacing="1">
     <tr>
       <td>Question</td>
@@ -40,5 +40,5 @@ if($_GET["Action"] == "Save")
 </body>
 </html>
 <?php
-mysql_close($objConnect);
+mysqli_close($objCon);
 ?>
