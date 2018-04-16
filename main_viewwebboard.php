@@ -71,9 +71,9 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
 }
 ?>
 <br>
-<a href="สำเนาwebboard.php">Back to Webboard</a> <br>
+<a href="main_webboard.php">Back to Webboard</a> <br>
 <br>
-<form action="สำเนาviewwebboard.php?QuestionID=<?php echo $_GET["QuestionID"];?>&Action=Save" method="post" name="frmMain" id="frmMain">
+<form action="main_viewwebboard.php?QuestionID=<?php echo $_GET["QuestionID"];?>&Action=Save" method="post" name="frmMain" id="frmMain">
   <table width="738" border="1" cellpadding="1" cellspacing="1">
     <tr>
       <td width="78">Details</td>
