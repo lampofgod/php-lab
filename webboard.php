@@ -1,13 +1,14 @@
 <html>
 <head>
-<title>ThaiCreate.Com</title>
+<title>BLOG</title>
 </head>
 <body>
-<a href="NewQuestion.php">New Topic</a>
+<a href="main_newquestion.php">New Topic</a>
 <?php
+date_default_timezone_set('Asia/Bangkok');
 include("config.php");
 $strSQL = "SELECT * FROM webboard ";
-$objQuery = mysqli_query($strSQL) or die("Error Query [".$strSQL."]");
+$objQuery = mysqli_query($objCon,$strSQL) or die("Error Query [".$strSQL."]");
 $Num_Rows = mysqli_num_rows($objQuery);
 
 $Per_Page = 10;   // Per Page
@@ -37,7 +38,7 @@ else
 }
 
 $strSQL .=" order  by QuestionID DESC LIMIT $Page_Start , $Per_Page";
-$objQuery  = mysql_query($strSQL);
+$objQuery  = mysqli_query($objCon,$strSQL);
 ?>
 <table width="909" border="1">
   <tr>
@@ -49,12 +50,12 @@ $objQuery  = mysql_query($strSQL);
     <th width="47"> <div align="center">Reply</div></th>
   </tr>
 <?php
-while($objResult = mysql_fetch_array($objQuery))
+while($objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC))
 {
 ?>
   <tr>
     <td><div align="center"><?php echo $objResult["QuestionID"];?></div></td>
-    <td><a href="ViewWebboard.php?QuestionID=<?php echo $objResult["QuestionID"];?>"><?php echo $objResult["Question"];?></a></td>
+    <td><a href="main_viewwebboard.php?QuestionID=<?php echo $objResult["QuestionID"];?>"><?php echo $objResult["Question"];?></a></td>
     <td><?php echo $objResult["Name"];?></td>
     <td><div align="center"><?php echo $objResult["CreateDate"];?></div></td>
     <td align="right"><?php echo $objResult["View"];?></td>
@@ -87,7 +88,7 @@ if($Page!=$Num_Pages)
 {
 	echo " <a href ='$_SERVER[SCRIPT_NAME]?Page=$Next_Page'>Next>></a> ";
 }
-mysql_close($objConnect);
+mysqli_close($objCon);
 ?>
 </body>
 </html>
