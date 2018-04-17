@@ -40,7 +40,6 @@ $objQuery = mysqli_query($objCon,$strSQL);
   </tr>
   <tr>
     <td width="397">Name : <?php echo $objResult["Name"];?> Create Date : <?php echo $objResult["CreateDate"];?></td>
-    <td width="253">View : <?php echo $objResult["View"];?> Reply : <?php echo $objResult["Reply"];?></td>
   </tr>
 </table>
 <br>
