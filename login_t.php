@@ -48,12 +48,12 @@
     </tbody>
   </table></p>
   <br>
-  <input type="submit" name="Submit" value="Login" class="button">
+  <input type="submit" name="Submit" value="Login" class="button"></form>
 
 <form name="form2" method="post" action="register.php">
 <input type="submit" name="Register" value="Register" class="button">
 
-</form></form>
+</form>
 </div>
 </body>
 </html>
