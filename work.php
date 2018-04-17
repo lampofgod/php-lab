@@ -7,27 +7,24 @@
 
 <body>
 
-<button type = "button" onclick="window.open('add_work.php','','width=1024,height=768'); return false;"> +ADD </button><br /><br /><br /></body>
+<p align ="center"><button type = "button" onclick="window.open('add_work.php','','width=1024,height=768'); return false;"> +ADD NEW WORK </button></p><br /><br /></body>
 
 <?php
 include("config.php");
 $strSQL = "SELECT * FROM work" or die("Error:" . mysqli_error()); 
 $objQuery = mysqli_query($objCon,$strSQL);
-
-
 while($row = mysqli_fetch_array($objQuery)) { 
 echo "<table border='1' align='center' width='500'>";
-  echo "<tr align='left' bgcolor='#CCCCCC'>";
-  echo "<td>" .$row["topic"] .  "</td></tr>"; 
-  echo "<tr><td>" .$row["content"] .  "</td></tr> ";  
-  echo "<tr><td>à¹‚à¸žà¸ªà¹€à¸¡à¸·à¹ˆà¸­ : " .$row["dateup"] .  "</td></tr>";
+  echo "<tr align='left' bgcolor='#006699'>";
+  echo "<td><font face='Cambria' color='white' size='4'>" .$row["topic"] .  "</font></td></tr>"; 
+  echo "<tr bgcolor='#E6E6FA'><td>" .$row["content"] .  "</td></tr> ";  
+  echo "<tr bgcolor='#E6E6FA'><td>â¾ÊàÁ×èÍ : " .$row["dateup"] .  "</td></tr>";
   ?>
-  <td><center><a href="myfile/<?php echo $row["fileupload"];?>"><?php echo $row["fileupload"];?></a></center></td>
+  <td bgcolor='#E6E6FA'><center><a href="myfile/<?php echo $row["fileupload"];?>"><?php echo $row["fileupload"];?></a></center></td>
   <?php
   echo "</tr>";
   echo "</table><br>";
 }
-
 mysqli_close($objCon);
 	
 ?>
