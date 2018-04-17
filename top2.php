@@ -21,10 +21,10 @@
 </head>
 <body bgcolor="#bde3ff"> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="announcement.php"target="mainFrame"> <input  value="Announcement" align="center"    class="button" ></a>
-<a href="work_t.php"target="mainFrame">			<input  value="Work"		 align="center"    class="button" ></a>
-<a href="student_frame.php"target="mainFrame"><input  value="Student" 	 align="center"    class="button" ></a>
-<a href="file.php"target="mainFrame">			<input  value="File"		 align="center"    class="button" ></a>
-<a href="Blog.php"target="mainFrame">			<input  value="Blog" 		 align="center"    class="button" ></a>
+<a href="announcement.php"target="mainFrame"> <input type="submit" value="Announcement" align="center"    class="button" ></a>
+<a href="work_t.php"target="mainFrame">			<input  type="submit" value="Work"		 align="center"    class="button" ></a>
+<a href="student_frame.php"target="mainFrame"><input  type="submit" value="Student" 	 align="center"    class="button" ></a>
+<a href="file.php"target="mainFrame">			<input  type="submit" value="File"		 align="center"    class="button" ></a>
+<a href="Blog.php"target="mainFrame">			<input  type="submit" value="Blog" 		 align="center"    class="button" ></a>
 </body>
 </html>
