@@ -16,5 +16,8 @@ else{
 $strSQL = "INSERT INTO announcement (topic,content) VALUES ('".$_POST["topic"]."', '".$_POST["content"]."')";
 		$objQuery = mysqli_query($objCon,$strSQL);
 		echo "Add announcement Completed !<br>";		
+		echo "<script type='text/javascript'>";
+	echo "window.close()";
+	echo "</script>";
 }
 ?>
