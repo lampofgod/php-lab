@@ -58,7 +58,7 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
 ?> No : <?php echo $intRows;?>
 <table width="738" border="1" cellpadding="1" cellspacing="1">
   <tr>
-    <td height="53" colspan="2"><?php echonl2br($objResult2["Details"]);?></td>
+    <td height="53" colspan="2"><?php echo nl2br($objResult2["Details"]);?></td>
   </tr>
   <tr>
     <td width="397">Name :
