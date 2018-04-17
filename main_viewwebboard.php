@@ -2,7 +2,6 @@
 date_default_timezone_set('Asia/Bangkok');
 include("config.php");
 if($_GET["Action"] == "Save")
-
 {
 	//*** Insert Reply ***//
 	$strSQL = "INSERT INTO reply ";
@@ -15,7 +14,6 @@ if($_GET["Action"] == "Save")
 	$strSQL = "UPDATE webboard ";
 	$strSQL .="SET Reply = Reply + 1 WHERE QuestionID = '".$_GET["QuestionID"]."' ";
 	$objQuery = mysqli_query($objCon,$strSQL);	
-
 }
 ?>
 <html>
@@ -28,7 +26,6 @@ if($_GET["Action"] == "Save")
 $strSQL = "SELECT * FROM webboard  WHERE QuestionID = '".$_GET["QuestionID"]."' ";
 $objQuery = mysqli_query($objCon,$strSQL) or die ("Error Query [".$strSQL."]");
 $objResult = mysqli_fetch_array($objQuery);
-
 //*** Update View ***//
 $strSQL = "UPDATE webboard ";
 $strSQL .="SET View = View + 1 WHERE QuestionID = '".$_GET["QuestionID"]."' ";
