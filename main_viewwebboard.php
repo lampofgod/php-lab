@@ -1,90 +1,95 @@
+<?php
+define('servername','webservhost');
+define('username','lampofgod_lamp');
+define('password','025179750');
+define('dbname','lampofgod_lamp');
+$objConnect = mysqli_connect(servername,username,password,dbname);
+
+if($_GET["Action"] == "Save")
+{
+	//*** Insert Reply ***//
+	$strSQL = "INSERT INTO reply ";
+	$strSQL .="(QuestionID,CreateDate,Details,Name) ";
+	$strSQL .="VALUES ";
+	$strSQL .="('".$_GET["QuestionID"]."','".date("Y-m-d H:i:s")."','".$_POST["txtDetails"]."','".$_POST["txtName"]."') ";
+	$objQuery = mysqli_query($strSQL);
+	
+	//*** Update Reply ***//
+	$strSQL = "UPDATE webboard ";
+	$strSQL .="SET Reply = Reply + 1 WHERE QuestionID = '".$_GET["QuestionID"]."' ";
+	$objQuery = mysqli_query($strSQL);	
+}
+?>
 <html>
 <head>
-<title>BLOG</title>
+<title>ThaiCreate.Com</title>
 </head>
 <body>
-<a href="main_newquestion.php">New Topic</a>
 <?php
-date_default_timezone_set('Asia/Bangkok');
-include("config.php");
-$strSQL = "SELECT * FROM webboard ";
-$objQuery = mysqli_query($objCon,$strSQL) or die("Error Query [".$strSQL."]");
-$Num_Rows = mysqli_num_rows($objQuery);
+//*** Select Question ***//
+$strSQL = "SELECT * FROM webboard  WHERE QuestionID = '".$_GET["QuestionID"]."' ";
+$objQuery = mysqli_query($strSQL) or die ("Error Query [".$strSQL."]");
+$objResult = mysqli_fetch_array($objQuery);
 
-$Per_Page = 10;   // Per Page
-
-$Page = $_GET["Page"];
-if(!$_GET["Page"])
-{
-	$Page=1;
-}
-
-$Prev_Page = $Page-1;
-$Next_Page = $Page+1;
-
-$Page_Start = (($Per_Page*$Page)-$Per_Page);
-if($Num_Rows<=$Per_Page)
-{
-	$Num_Pages =1;
-}
-else if(($Num_Rows % $Per_Page)==0)
-{
-	$Num_Pages =($Num_Rows/$Per_Page) ;
-}
-else
-{
-	$Num_Pages =($Num_Rows/$Per_Page)+1;
-	$Num_Pages = (int)$Num_Pages;
-}
-
-$strSQL .=" order  by QuestionID DESC LIMIT $Page_Start , $Per_Page";
-$objQuery  = mysqli_query($objCon,$strSQL);
+//*** Update View ***//
+$strSQL = "UPDATE webboard ";
+$strSQL .="SET View = View + 1 WHERE QuestionID = '".$_GET["QuestionID"]."' ";
+$objQuery = mysqli_query($strSQL);	
 ?>
-<table width="909" border="1">
+<table width="738" border="1" cellpadding="1" cellspacing="1">
   <tr>
-    <th width="99"> <div align="center">QuestionID</div></th>
-    <th width="458"> <div align="center">Question</div></th>
-    <th width="90"> <div align="center">Name</div></th>
-    <th width="130"> <div align="center">CreateDate</div></th>
+    <td colspan="2"><center><h1><?php echo $objResult["Question"];?></h1></center></td>
   </tr>
-<?php
-while($objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC))
-{
-?>
   <tr>
-    <td><div align="center"><?php echo $objResult["QuestionID"];?></div></td>
-    <td><a href="main_viewwebboard.php?QuestionID=<?php echo $objResult["QuestionID"];?>"><?php echo $objResult["Question"];?></a></td>
-    <td><?php echo $objResult["Name"];?></td>
-    <td><div align="center"><?php echo $objResult["CreateDate"];?></div></td>
+    <td height="53" colspan="2"><?php echonl2br($objResult["Details"]);?></td>
   </tr>
-<?php
-}
-?>
+  <tr>
+    <td width="397">Name : <?php echo $objResult["Name"];?> Create Date : <?php echo $objResult["CreateDate"];?></td>
+  </tr>
 </table>
-
 <br>
-Total <?php echo $Num_Rows;?> Record : <?php echo $Num_Pages;?> Page :
+<br>
 <?php
-if($Prev_Page)
+$intRows = 0;
+$strSQL2 = "SELECT * FROM reply  WHERE QuestionID = '".$_GET["QuestionID"]."' ";
+$objQuery2 = mysqli_query($strSQL2) or die ("Error Query [".$strSQL."]");
+while($objResult2 = mysqli_fetch_array($objQuery2))
 {
-	echo " <a href='$_SERVER[SCRIPT_NAME]?Page=$Prev_Page'><< Back</a> ";
+	$intRows++;
+?> No : <?php echo $intRows;?>
+<table width="738" border="1" cellpadding="1" cellspacing="1">
+  <tr>
+    <td height="53" colspan="2"><?php echonl2br($objResult2["Details"]);?></td>
+  </tr>
+  <tr>
+    <td width="397">Name :
+        <?php echo $objResult2["Name"];?>      </td>
+    <td width="253">Create Date :
+    <?php echo $objResult2["CreateDate"];?></td>
+  </tr>
+</table><br>
+<?php
 }
-
-for($i=1; $i<=$Num_Pages; $i++){
-	if($i != $Page)
-	{
-		echo "[ <a href='$_SERVER[SCRIPT_NAME]?Page=$i'>$i</a> ]";
-	}
-	else
-	{
-		echo "<b> $i </b>";
-	}
-}
-if($Page!=$Num_Pages)
-{
-	echo " <a href ='$_SERVER[SCRIPT_NAME]?Page=$Next_Page'>Next>></a> ";
-}
-mysqli_close($objCon);
 ?>
+<br>
+<a href="Webboard.php">Back to Webboard</a> <br>
+<br>
+<form action="ViewWebboard.php?QuestionID=<?php echo $_GET["QuestionID"];?>&Action=Save" method="post" name="frmMain" id="frmMain">
+  <table width="738" border="1" cellpadding="1" cellspacing="1">
+    <tr>
+      <td width="78">Details</td>
+      <td><textarea name="txtDetails" cols="50" rows="5" id="txtDetails"></textarea></td>
+    </tr>
+    <tr>
+      <td width="78">Name</td>
+      <td width="647"><input name="txtName" type="text" id="txtName" value="" size="50"></td>
+    </tr>
+  </table>
+  
+  <input name="btnSave" type="submit" id="btnSave" value="Submit">
+</form>
 </body>
 </html>
+<?php
+mysqli_close($objConnect);
+?>
