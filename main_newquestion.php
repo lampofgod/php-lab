@@ -18,8 +18,7 @@ if($_GET["Action"] == "Save")
 <title>BLOG</title>
 </head>
 <body>
-
-<form action="main_viewwebboard.php?Action=Save" method="post" name="frmMain" id="frmMain">
+<form action="main_newquestion.php?Action=Save" method="post" name="frmMain" id="frmMain">
   <table width="621" border="1" cellpadding="1" cellspacing="1">
     <tr>
       <td>Question</td>
