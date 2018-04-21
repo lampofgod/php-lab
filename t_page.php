@@ -47,13 +47,14 @@
 $objQuery = mysqli_query($objCon,$strSQL);
 echo "<table border='1'>";
 echo "<tr align='center' bgcolor='#CCCCCC'><td>Classcode</td><td>Classname</td><td>Aboutclass</td></tr>";
-while($row = mysqli_fetch_array($objQuery)) { 
+while($row = mysqli_fetch_array($objQuery)) {
+	if($row["UserID"] == $objResult["UserID"]){
   echo "<tr>";
  echo '<td>'.$row["Classcode"] .  "</a></td> "; 
  echo '<td><a href="display_t.php" target="_blank">' .$row["Classname"] .  "</a></td> "; 
  echo '<td>'.$row["Aboutclass"] .  "</a></td> "; 
   echo "</tr>";
-}
+	}}
 echo "</table>";
   ?>
   <br>
