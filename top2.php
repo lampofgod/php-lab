@@ -1,5 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+session_start();
+        include("config.php");
+	if($_SESSION['UserID'] == "")
+	{
+		echo "Please Login!";
+		exit();
+	}
+	$strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
+	$objQuery = mysqli_query($objCon,$strSQL);
+	$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
+?>
+<html>
 <head>
 <style>
 .button {
@@ -20,11 +31,16 @@
 <title>Untitled Document</title>
 </head>
 <body bgcolor="#bde3ff"> 
+<h3 align="right"><?php echo $objResult["txtName"];?>&nbsp;<?php echo $objResult["txtLastName"];?></h3>
+
+<h5 align="right">Classcode : <?php echo $_SESSION["Classcode"];?></h5>
+<a href="edit_profile.php" target="new"><p align="right">Edit</a>
+  <a href="logout.php" target="new">Logout</p></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="announcement.php"target="mainFrame"> <input type="submit" value="Announcement" align="center"    class="button" ></a>
-<a href="work_t.php"target="mainFrame">			<input  type="submit" value="Work"		 align="center"    class="button" ></a>
-<a href="student_frame.php"target="mainFrame"><input  type="submit" value="Student" 	 align="center"    class="button" ></a>
-<a href="file.php"target="mainFrame">			<input  type="submit" value="File"		 align="center"    class="button" ></a>
-<a href="Blog.php"target="mainFrame">			<input  type="submit" value="Blog" 		 align="center"    class="button" ></a>
+<a href="announcement.php"target="mainFrame"> <input  value="Announcement" align="center"    class="button" ></a>
+<a href="work.php"target="mainFrame">			<input  value="Work"		 align="center"    class="button" ></a>
+<a href="student_frame.php"target="mainFrame"><input  value="Student" 	 align="center"    class="button" ></a>
+<a href="file.php"target="mainFrame">			<input  value="File"		 align="center"    class="button" ></a>
+<a href="main_webboard.php"target="mainFrame">			<input  value="Blog" 		 align="center"    class="button" ></a>
 </body>
 </html>
