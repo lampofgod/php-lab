@@ -11,13 +11,28 @@
 <body>
 <form name="form1" method="post" action="teacherclassresult.php">
 <h1>กรอกวันที่เพื่อแสดงข้อมูลนักเรียนที่เข้าเรียน</h1>
-<table border="1" style="width: 300px">
-	<tr>
-		<td>Date</td>
-		<td><input name="txtID" type="text" id="txtID" value="yyyy-mm-dd"></td>
-	</tr>
+Date
+	<link rel="stylesheet" media="all" type="text/css" href="jquery-ui.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="jquery-ui-timepicker-addon.css" />
+
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="jquery-ui-timepicker-addon.js"></script>
+	<script type="text/javascript" src="jquery-ui-sliderAccess.js"></script>
+
+	<script type="text/javascript">
+
+$(function(){
+	$("#dateInput").datepicker({
+		dateFormat: 'yy-mm-dd'
+	});
+});
+
+</script>
+		<input type="text" name="dateInput" id="dateInput" value="" /> 
 	
-</table><br>
+<br><br>
 <input type="submit" value="Submit">
 </form><br>
 <input type="button" align="left" value="Back" button onclick="location.href='teacher.php'">
