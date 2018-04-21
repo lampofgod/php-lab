@@ -7,9 +7,9 @@
 <body>
 <?php
 include("config1.php");
-$objQuery = "SELECT * FROM student_check WHERE date(Date)='".$_POST["txtID"]."' ORDER BY Date ASC" or die("Error:" . mysqli_error()); 
+$objQuery = "SELECT * FROM student_check WHERE date(Date)='".$_POST["dateInput"]."' ORDER BY Date ASC" or die("Error:" . mysqli_error()); 
 $objResult = mysqli_query($objCon, $objQuery); 
-echo "<p> <font size='7pt'> ตารางแสดงการเข้าเรียน ".$_POST["txtID"]." </font></p>";
+echo "<p> <font size='7pt'> ตารางแสดงการเข้าเรียน ".$_POST["dateInput"]." </font></p>";
 echo "<table border='1' width='500'>";
 echo "<tr align='center' bgcolor='#CCCCCC'><td>No</td><td>ID</td><td>Name</td><td>Seat</td><td>Date</td><td>ลบ</td></tr>";
 $item = 1;
