@@ -31,6 +31,7 @@ session_start();
 <title>Untitled Document</title>
 </head>
 <body bgcolor="#bde3ff"> 
+<h3 align="right"><?php echo $objResult["Status"];?>
 <h3 align="right"><?php echo $objResult["txtName"];?>&nbsp;<?php echo $objResult["txtLastName"];?></h3>
 
 <h5 align="right">Classcode : <?php echo $_SESSION["Classcode"];?></h5>
