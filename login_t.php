@@ -1,5 +1,6 @@
 <html>
 <head>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <style>
 	body { background-color:#98AFC7;
 	font-family:Cambria;
@@ -48,10 +49,14 @@
     </tbody>
   </table></p>
   <br>
-  <input type="submit" name="Submit" value="Login" class="button"></form>
+<center>
+<div class="g-recaptcha" data-sitekey="6LeZplQUAAAAALXszTnH_i87575bZCALARGj7pG4"></div>
+</center>
+<input type="submit" name="Submit" value="Login" class="button"></form>
 
 <form name="form2" method="post" action="register.php">
 <input type="submit" name="Register" value="Register" class="button">
+
 
 </form>
 </div>
