@@ -38,7 +38,7 @@ $strSQL2 = "SELECT * FROM classroom WHERE Classcode = '".$_GET["Classcode"]."' "
 $objQuery2 = mysqli_query($objCon,$strSQL2) or die ("Error Query [".$strSQL2."]");
 $objResult2 = mysqli_fetch_array($objQuery2);
 ?>	
-<h5 align="right">Classcode : <?php echo $objResult2["Classcode"];?></h5>
+<h5 align="right">Classcode : <?php echo $_SESSION["Classcode"];?></h5>
 <a href="edit_profile.php" target="new"><p align="right">Edit</a>
   <a href="logout.php" target="new">Logout</p></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
