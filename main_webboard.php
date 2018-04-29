@@ -1,9 +1,13 @@
+<?php  session_start(); 
+$UserID=$_SESSION['UserID'];
+$Classname=$_SESSION['Classname'];
+?>
 <html>
 <head>
 <title>BLOG</title>
 </head>
 <body>
-<p align ="center"><button type = "button" onclick="window.open('main_newquestion.php','','width=400,height=400'); return false;"> +ADD NEW TOPIC</button><br /><br /><br /></p>
+<p align ="center"><button type = "button" onClick="window.open('main_newquestion.php','','width=400,height=400'); return false;"> +ADD NEW TOPIC</button><br /><br /><br /></p>
 
 <?php
 date_default_timezone_set('Asia/Bangkok');
@@ -33,7 +37,7 @@ else
 	$Num_Pages =($Num_Rows/$Per_Page)+1;
 	$Num_Pages = (int)$Num_Pages;
 }
-$strSQL .=" order  by QuestionID DESC LIMIT $Page_Start , $Per_Page";
+$strSQL .=" WHERE Classname = '".$Classname."' order  by QuestionID DESC LIMIT $Page_Start , $Per_Page";
 $objQuery  = mysqli_query($objCon,$strSQL);
 ?>
 <table width="909" border="1">
@@ -42,8 +46,6 @@ $objQuery  = mysqli_query($objCon,$strSQL);
     <th width="458"bgcolor="#006699"><font face="Cambria" color="white" size="4"> <div align="center">Question</div></font></th>
     <th width="90"bgcolor="#006699"><font face="Cambria" color="white" size="4"> <div align="center">Name</div></font></th>
     <th width="130"bgcolor="#006699"><font face="Cambria" color="white" size="4"> <div align="center">CreateDate</div></font></th>
-    <th width="45"bgcolor="#006699"><font face="Cambria" color="white" size="4"> <div align="center">View</div></font></th>
-    <th width="47"bgcolor="#006699"><font face="Cambria" color="white" size="4"> <div align="center">Reply</div></font></th>
   </tr>
 <?php
 while($objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC))
@@ -54,8 +56,6 @@ while($objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC))
     <td bgcolor="#99CCCC"><a href="main_viewwebboard.php?QuestionID=<?php echo $objResult["QuestionID"];?>"><?php echo $objResult["Question"];?></a></td>
     <td bgcolor="#99CCCC"><?php echo $objResult["Name"];?></td>
     <td bgcolor="#99CCCC"><div align="center"><?php echo $objResult["CreateDate"];?></div></td>
-    <td align="right" bgcolor="#99CCCC"><?php echo $objResult["View"];?></td>
-    <td align="right" bgcolor="#99CCCC"><?php echo $objResult["Reply"];?></td>
   </tr>
 <?php
 }
