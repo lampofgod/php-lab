@@ -1,13 +1,15 @@
+<?php  session_start(); 
+$UserID=$_SESSION['UserID'];
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <style>
 div{
 	width: 800px;
-	height: 250px;
+	height: 300px;
 	border: 3px solid #0e5285;
 	background-color: white;
-
 }//table
 .button {
     background-color: #0e5285;
@@ -25,7 +27,6 @@ h3{
 	font-style: bold;
 	color: #0e5285;
 }
-
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
@@ -38,7 +39,6 @@ h3{
 <center><div><br>
 
 <h3>Create class</h3>
-Enter UserID <br /><input name="UserID" type="text" id="UserID" size="6"><br />
 Enter Classcode <br /><input name="Classcode" type="text" id="Classcode" size="6"><br />
 Class name <br /><input name="Classname" type="text" id="Classname" size="100"><br />
 About class <br /><input name="Aboutclass" type="text" id="Aboutclass" size="100"><br />
