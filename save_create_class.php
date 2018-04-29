@@ -1,4 +1,6 @@
 <?php
+session_start(); 
+$UserID=$_SESSION['UserID'];
 	include("config.php");
 	if(trim($_POST["Classcode"]) == "")
 	{
@@ -20,11 +22,11 @@
 	}
 	else
 	{   		
-		$strSQL = "INSERT INTO classroom (Classcode,Classname,Aboutclass,UserID) VALUES ('".$_POST["Classcode"]."', '".$_POST["Classname"]."', '".$_POST["Aboutclass"]."', '".$_POST['UserID']."')";
+		$strSQL = "INSERT INTO classroom (Classcode,Classname,Aboutclass,UserID) VALUES ('".$_POST["Classcode"]."', '".$_POST["Classname"]."', '".$_POST["Aboutclass"]."', '".$UserID."')";
 		$objQuery = mysqli_query($objCon,$strSQL);
 		echo "Create Completed!<br>";
 		$_SESSION["Classcode"] = $objResult["Classcode"];
 		session_write_close();
-		echo "<br> Go to  <a href='add_class.php'>your class room</a>";}
+		echo "<br> Go to  <a href='t_page.php'>your class room</a>";}
 	mysqli_close($objCon);
 ?>
