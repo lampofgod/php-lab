@@ -43,13 +43,14 @@ $objResult2 = mysqli_fetch_array($objQuery2);
 <a href="edit_profile.php" target="new">Edit</a>
   <a href="logout.php" target="new">Logout</p></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="announcement.php"target="mainFrame"> <input  value="Announcement" align="center"    class="button" "></a>
-<a href="calendar.php"target="mainFrame">			<input  value="Calendar"		 align="center"    class="button" ></a>
-<a href="work.php"target="mainFrame">			<input  value="Work"		 align="center"    class="button" ></a>
-<a href="student_frame.php"target="mainFrame"><input  value="Student" 	 align="center"    class="button" ></a>
-<a href="teacherdate.php"target="mainFrame">          <input  value="Attendance"         align="center"    class="button" ></a>
-<a href="file.php"target="mainFrame">			<input  value="File"		 align="center"    class="button" ></a>
-<a href="chatroom.php"target="mainFrame">			<input  value="Chatroom" 		 align="center"    class="button" ></a>
-<a href="main_webboard.php"target="mainFrame">			<input  value="Blog" 		 align="center"    class="button" ></a>
+<a href="announcement.php"target="mainFrame">		<input type="submit"  value="Announcement" align="center"    class="button" "></a>
+<a href="calendar.php"target="mainFrame">		<input type="submit" value="Calendar"		 align="center"    class="button" ></a>
+<a href="work.php"target="mainFrame">			<input  type="submit" value="Work"		 align="center"    class="button" ></a>
+<a href="student_frame.php"target="mainFrame">		<input type="submit" value="Student" 	 align="center"    class="button" ></a>
+<a href="teacherdate.php"target="mainFrame">        	<input type="submit" value="Attendance"         align="center"    class="button" ></a>
+<a href="file.php"target="mainFrame">			<input type="submit" value="File"		 align="center"    class="button" ></a>
+<a href="chatroom.php"target="mainFrame">		<input type="submit" value="Chatroom" 		 align="center"    class="button" ></a>
+<a href="main_webboard.php"target="mainFrame">		<input type="submit" value="Blog" 		 align="center"    class="button" ></a>
 </body>
 </html>
+
