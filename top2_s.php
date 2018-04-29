@@ -39,13 +39,13 @@ session_start();
 <a href="edit_profile.php" target="new">Edit</a>
   <a href="logout.php" target="new">Logout</p></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="announcement_s.php"target="mainFrame"> <input  value="Announcement" align="center"    class="button" ></a>
-<a href="calendar_s.php"target="mainFrame">			<input  value="Calendar"		 align="center"    class="button" ></a>
-<a href="work_s.php"target="mainFrame">			<input  value="Work"		 align="center"    class="button" ></a>
-<a href="student_frame_s.php"target="mainFrame"><input  value="Student" 	 align="center"    class="button" ></a>
-<a href="studentnew.php"target="mainFrame">			<input  value="Attendance" 		 align="center"    class="button" ></a>
-<a href="file_s.php"target="mainFrame">			<input  value="File"		 align="center"    class="button" ></a>
-<a href="chatroom.php"target="mainFrame">			<input  value="Chatroom" 		 align="center"    class="button" ></a>
-<a href="main_webboard.php"target="mainFrame">			<input  value="Blog" 		 align="center"    class="button" ></a>
+<a href="announcement_s.php"target="mainFrame"> <input  type="submit" value="Announcement" align="center"    class="button" ></a>
+<a href="calendar_s.php"target="mainFrame">			<input  type="submit" value="Calendar"		 align="center"    class="button" ></a>
+<a href="work_s.php"target="mainFrame">			<input type="submit" value="Work"		 align="center"    class="button" ></a>
+<a href="student_frame_s.php"target="mainFrame"><input type="submit" value="Student" 	 align="center"    class="button" ></a>
+<a href="studentnew.php"target="mainFrame">			<input type="submit" value="Attendance" 		 align="center"    class="button" ></a>
+<a href="file_s.php"target="mainFrame">			<input  value="File"	type="submit"	 align="center"    class="button" ></a>
+<a href="chatroom.php"target="mainFrame">			<input  value="Chatroom" 	type="submit"	 align="center"    class="button" ></a>
+<a href="main_webboard.php"target="mainFrame">			<input  value="Blog" 	type="submit"	 align="center"    class="button" ></a>
 </body>
 </html>
