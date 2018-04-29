@@ -1,83 +1,49 @@
+<?php
+session_start(); 
+$UserID=$_SESSION['UserID'];
+$Classname=$_SESSION['Classname'];
+$txtName=$_SESSION['txtName'];
+$txtLastName=$_SESSION['txtLastName'];
+include 'connection.php';
 
- <?
-if ($_POST[mes] <>"")
-{
-$hostname="webservhost";
-$user="boatboth_0372";
-$password="0811430565";
-$dbname="boatboth_0372";
-$connect=mysql_connect($hostname,$user,$password) or die("cannot connect");
-$db=mysql_select_db($dbname)or die("cannot connect database!");
-$sql="INSERT INTO chatroom ( mes)VALUES ('$_POST[mes]');";
-$dbquery=mysql_db_query($dbname,$sql);
-}
-?>
-<html >
-<head>
-<META HTTP-EQUIV="REFRESH" CONTENT="20">
-<? //<META HTTP-EQUIV="REFRESH" CONTENT="5">REFRESH ทุก 5 วินาที ?>
-<title>CHAT BOX</title>
-</head>
+$query = "SELECT * FROM shouts WHERE Classname = '".$Classname."' ORDER BY id DESC";
+$shouts = mysqli_query($con,$query);
 
-<body>
-<table width="70%" border="0" cellspacing="0" cellpadding="0" align="center">
-<tr><td width="126" bgcolor="#FF9999">WELCOME TO CHATBOX</td></tr>
-<tr>
-<th bgcolor="#FFDDDD" scope="row"><form name="form2" method="post" action="<?=$PHP_SELF;?>">
-<label>
-<div align="left">
-
-<?
-date_default_timezone_set("Asia/Bangkok"); 
-$hostname="webservhost";
-$user="boatboth_0372";
-$password="0811430565";
-$dbname="boatboth_0372";//ชื่อฐานข้อมูล
-$connect=mysql_connect($hostname,$user,$password) or die("cannot connect");
-$db=mysql_select_db($dbname)or die("cannot connect database!");
-$sql="select * from chatroom order by id DESC limit 0,100";//เรียกข้อมูล
-$dbquery=mysql_db_query($dbname,$sql);
-$row=mysql_num_rows($dbquery);
-
-while($result=mysql_fetch_array($dbquery)) {
-$a[] = $result[mes]; //เก็บช้อความ 10 อันดับล่าสุดลงตัวแปร
-$date[] = $result[dateup]; //เก็บวันเวลา
-}
-
-for($i=count($a)-1;$i>=0;$i--) {
-
-
- $date = date("Y-m-d");
-    $time = date("H:i:s");
-     
-    echo $date." / ".$time;
-echo ": ".$a[$i]."<br>";
-
-}
 ?>
 
 
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+ <link rel=stylesheet href="style.css" type="text/css" />
+ </head>
+ <body>
+ <div id="container">
+ <header>
+ <h1>WELCOME TO CHATBOX</h1>
+ </header>
+ <div id="shouts">
+
+ <ul>
+ <?php while($row = mysqli_fetch_assoc($shouts)) : ?>
+<li class="shout"><span><?php echo $row['time'];?></span> - <strong><?php echo $row['user'];?></strong>: <?php echo $row['message'];?></li>
+ <?php endwhile; ?>
+ </ul>
+ </div>
+
+<div id="input">
+<?php if(isset($_GET['error'])) : ?>
+<div class="error"><?php echo $_GET['error']; ?></div>
+<?php endif; ?>
+<form name="form1" method="post" action="process.php" >
+<!--<input type="text" name="user" placeholder="พิมพ์ชื่อ"/>-->
+<input type="text" name="message" placeholder="พิมพ์ข้อความ"/>
+<br/>
+<input type="submit" name="Submit" value="Send" align="center" class="button" width="400" height="200"> 
+<!--<input class="shout-btn" type="submit" name="submit" value="กดส่งข้อความ" />-->
+</form>
 </div>
-</label>
-</form> </th>
-</tr>
-<tr>
-<th scope="row"><form name="form1" method="post" action="">
-<table width="88%" border="1" cellspacing="0" cellpadding="0">
-<tr>
-<th scope="row"><font size="2">ข้อความ</font></th>
-<td><label>
-<div align="center">
-<input name="mes" type="text" id="mes" size="60">
 </div>
-</label></td>
-<td><label>
-<input name="Submit" type="submit" id="Submit" value="Send">
-</label></td>
-</tr>
-</table>
-</form> </th>
-</tr>
-</table>
 </body>
 </html>
