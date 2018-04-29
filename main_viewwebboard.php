@@ -33,13 +33,13 @@ $objQuery = mysqli_query($objCon,$strSQL);
 ?>
 <table width="738" border="1" cellpadding="1" cellspacing="1">
   <tr>
-    <td colspan="2"><center><h1><?php echo $objResult["Question"];?></h1></center></td>
+    <td colspan="2" bgcolor="#006699"><center><h1><?php echo $objResult["Question"];?></h1></center></td>
   </tr>
   <tr>
-    <td height="53" colspan="2"><?php echo nl2br($objResult["Details"]);?></td>
+    <td height="53" colspan="2" bgcolor="#99CCCC"><?php echo nl2br($objResult["Details"]);?></td>
   </tr>
   <tr>
-    <td width="397">Name : <?php echo $objResult["Name"];?> Create Date : <?php echo $objResult["CreateDate"];?></td>
+    <td width="397"  bgcolor="#006699">Name : <?php echo $objResult["Name"];?> Create Date : <?php echo $objResult["CreateDate"];?></td>
   </tr>
 </table>
 <br>
@@ -54,12 +54,12 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
 ?> No : <?php echo $intRows;?>
 <table width="738" border="1" cellpadding="1" cellspacing="1">
   <tr>
-    <td height="53" colspan="2"><?php echo nl2br($objResult2["Details"]);?></td>
+    <td height="53" colspan="2" bgcolor="#006699"><?php echo nl2br($objResult2["Details"]);?></td>
   </tr>
   <tr>
-    <td width="397">Name :
+    <td width="397" bgcolor="#99CCCC">Name :
         <?php echo $objResult2["Name"];?>      </td>
-    <td width="253">Create Date :
+    <td width="253" bgcolor="#99CCCC">Create Date :
     <?php echo $objResult2["CreateDate"];?></td>
   </tr>
 </table><br>
@@ -72,12 +72,12 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
 <form action="main_viewwebboard.php?QuestionID=<?php echo $_GET["QuestionID"];?>&Action=Save" method="post" name="frmMain" id="frmMain">
   <table width="738" border="1" cellpadding="1" cellspacing="1">
     <tr>
-      <td width="78">Details</td>
+      <td width="78" bgcolor="#006699">Details</td>
       <td><textarea name="txtDetails" cols="50" rows="5" id="txtDetails"></textarea></td>
     </tr>
     <tr>
-      <td width="78">Name</td>
-      <td width="647"><input name="txtName" type="text" id="txtName" value="" size="50"></td>
+      <td width="78" bgcolor="#006699">Name</td>
+      <td width="647" bgcolor="#006699"><input name="txtName" type="text" id="txtName" value="" size="50"></td>
     </tr>
   </table>
   
