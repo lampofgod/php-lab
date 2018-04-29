@@ -15,7 +15,7 @@ session_start();
 <style>
 .button {
     background-color: #0e5285;
-    width: 12%;
+    width: 10%;
     border: none;
     color: white;
     padding: 15px 40px;
@@ -38,14 +38,18 @@ $strSQL2 = "SELECT * FROM classroom WHERE Classcode = '".$_GET["Classcode"]."' "
 $objQuery2 = mysqli_query($objCon,$strSQL2) or die ("Error Query [".$strSQL2."]");
 $objResult2 = mysqli_fetch_array($objQuery2);
 ?>	
-<h5 align="right">Classcode : <?php echo $_SESSION["Classcode"];?></h5>
-<a href="edit_profile.php" target="new"><p align="right">Edit</a>
+<h5 align="right">Classcode : <?php echo $_SESSION["Classcode"];?> Classname : <?php echo $_SESSION["Classname"];?></h5>
+<a href="t_page.php" target="new"><p align="right">Home</a>
+<a href="edit_profile.php" target="new">Edit</a>
   <a href="logout.php" target="new">Logout</p></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="announcement.php"target="mainFrame"> <input  value="Announcement" align="center"    class="button" ></a>
+<a href="announcement.php"target="mainFrame"> <input  value="Announcement" align="center"    class="button" "></a>
+<a href="calendar.php"target="mainFrame">			<input  value="Calendar"		 align="center"    class="button" ></a>
 <a href="work.php"target="mainFrame">			<input  value="Work"		 align="center"    class="button" ></a>
 <a href="student_frame.php"target="mainFrame"><input  value="Student" 	 align="center"    class="button" ></a>
+<a href="teacherdate.php"target="mainFrame">          <input  value="Attendance"         align="center"    class="button" ></a>
 <a href="file.php"target="mainFrame">			<input  value="File"		 align="center"    class="button" ></a>
+<a href="chatroom.php"target="mainFrame">			<input  value="Chatroom" 		 align="center"    class="button" ></a>
 <a href="main_webboard.php"target="mainFrame">			<input  value="Blog" 		 align="center"    class="button" ></a>
 </body>
 </html>
