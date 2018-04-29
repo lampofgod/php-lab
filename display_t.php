@@ -6,6 +6,7 @@ $strSQL2 = "SELECT * FROM classroom WHERE Classcode = '".$_GET["Classcode"]."' "
 $objQuery2 = mysqli_query($objCon,$strSQL2) or die ("Error Query [".$strSQL2."]");
 $objResult2 = mysqli_fetch_array($objQuery2);
 $_SESSION["Classcode"] = $objResult2["Classcode"];
+$_SESSION["Classname"] = $objResult2["Classname"];
 		session_write_close();
 				?>
 
