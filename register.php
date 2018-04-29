@@ -19,7 +19,7 @@
 <body bgcolor="#bde3ff">
 <form name="form1" method="post" action="save_register.php" >
 <p align="center">
-  <img src="1.png" VSPACE="80" ></img> </center>
+  <img src="register.png" VSPACE="80" ></img> </center>
   <table width="400" border="1" style="width: 400px" align="center" bgcolor="white">
     <tbody>
       <tr>
