@@ -1,9 +1,13 @@
+<?php  session_start(); 
+$UserID=$_SESSION['UserID'];
+$Classname=$_SESSION['Classname'];
+?>
 <meta charset="UTF-8">
 <?php
 include('connection.php'); 
 $fileupload = $_REQUEST['fileupload']; 
-date_default_timezone_set("Asia/Bangkok");
-$date = date("d-m-Y"); 
+date_default_timezone_set('Asia/Bangkok');
+$time = $date = date("Y-m-d H:i:s");
 $upload=$_FILES['fileupload'];
 if(trim($_POST["topic"]) == "")
 	{
@@ -27,8 +31,8 @@ $path_link="myfile/".$newname;
 move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);  	
 	}
 	
-		$sql = "INSERT INTO work (fileupload,topic,content) 
-		VALUES('$newname','".$_POST["topic"]."', '".$_POST["content"]."')";
+		$sql = "INSERT INTO work (topic,content,fileupload,Classname,dateup) 
+		VALUES('".$_POST["topic"]."', '".$_POST["content"]."','$newname','".$Classname."','".$time."')";
 		
 		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
 	
