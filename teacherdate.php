@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<form name="form1" method="post" action="teacherclassresult.php">
+<form name="form1" method="post" action="checkdate.php">
 <h1>กรอกวันที่เพื่อแสดงข้อมูลนักเรียนที่เข้าเรียน</h1>
 Date
 	<link rel="stylesheet" media="all" type="text/css" href="jquery-ui.css" />
@@ -34,7 +34,6 @@ $(function(){
 	
 <br><br>
 <input type="submit" value="Submit">
-</form><br>
-<input type="button" align="left" value="Back" button onclick="location.href='teacher.php'">
+</form>
 </body>
 </html>
