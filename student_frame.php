@@ -1,13 +1,22 @@
+<?php  session_start(); 
+$UserID=$_SESSION['UserID'];
+$Classname=$_SESSION['Classname'];
+$Classcode=$_SESSION['Classcode'];
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
-<p align="center"><font face='Cambria' color='black' size='6'><b>Student in Classroom</b></font></p> 
+
+<p align="center"><font face='Cambria' color='black' size='5'>Attendance List</font></p> 
+</body>
 <?php
 include("config.php");  
- $strSQL = "SELECT * FROM member WHERE Status = 'STUDENT'" or die("Error:" . mysqli_error()); 
+
+
+  $strSQL = "SELECT * FROM member,join_class WHERE member.UserID=join_class.UserID && join_class.Classcode = '".$Classcode."' ORDER BY join_class.UserID asc" or die("Error:" . mysqli_error()); 
 $objQuery = mysqli_query($objCon,$strSQL);
 	
 echo "<table border='1' align='center' width='500'bgcolor='#E6E6FA'>";
