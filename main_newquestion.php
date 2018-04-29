@@ -1,3 +1,7 @@
+<?php  session_start(); 
+$UserID=$_SESSION['UserID'];
+$Classname=$_SESSION['Classname'];
+?>
 <?php
 date_default_timezone_set('Asia/Bangkok');
 include("config.php");
@@ -5,12 +9,15 @@ if($_GET["Action"] == "Save")
 {
 	//*** Insert Question ***//
 	$strSQL = "INSERT INTO webboard ";
-	$strSQL .="(CreateDate,Question,Details,Name) ";
+	$strSQL .="(CreateDate,Question,Details,Name,Classname) ";
 	$strSQL .="VALUES ";
-	$strSQL .="('".date("Y-m-d H:i:s")."','".$_POST["txtQuestion"]."','".$_POST["txtDetails"]."','".$_POST["txtName"]."') ";
+	$strSQL .="('".date("Y-m-d H:i:s")."','".$_POST["txtQuestion"]."','".$_POST["txtDetails"]."','".$_POST["txtName"]."','".$Classname."') ";
 	$objQuery = mysqli_query($objCon,$strSQL);
 	
-	header("location:main_webboard.php");
+	//header("location:main_webboard.php");
+echo "<script type='text/javascript'>";
+	echo "window.close()";
+	echo "</script>";
 }
 ?>
 <html>
