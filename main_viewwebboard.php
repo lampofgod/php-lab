@@ -4,6 +4,16 @@ include("config.php");
 if($_GET["Action"] == "Save")
 {
 	//*** Insert Reply ***//
+	$captcha;
+ if(isset($_POST['g-recaptcha-response'])){
+ $captcha=$_POST['g-recaptcha-response'];
+ }
+ if(!$captcha){
+ echo '<h2>Please confirm your identity.</h2>';
+ exit;
+ }
+ else{
+	
 	$strSQL = "INSERT INTO reply ";
 	$strSQL .="(QuestionID,CreateDate,Details,Name) ";
 	$strSQL .="VALUES ";
@@ -14,11 +24,12 @@ if($_GET["Action"] == "Save")
 	$strSQL = "UPDATE webboard ";
 	$strSQL .="SET Reply = Reply + 1 WHERE QuestionID = '".$_GET["QuestionID"]."' ";
 	$objQuery = mysqli_query($objCon,$strSQL);	
-}
+}}
 ?>
 <html>
 <head>
 <title>BLOG</title>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <?php
@@ -80,7 +91,7 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
       <td width="647" bgcolor="#006699"><input name="txtName" type="text" id="txtName" value="" size="50"></td>
     </tr>
   </table>
-  
+  <div class="g-recaptcha" data-sitekey="6LeZplQUAAAAALXszTnH_i87575bZCALARGj7pG4"></div>
   <input name="btnSave" type="submit" id="btnSave" value="Submit">
 </form>
 </body>
