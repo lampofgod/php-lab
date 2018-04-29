@@ -17,6 +17,8 @@ $Classname=$_SESSION['Classname'];
 	$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 	
 ?>
+<p align ="center"><button type = "button" onclick="window.open('add_ann.php','','width=400,height=400'); return false;"> +ADD NEW POST </button><br /><br /><br /></p></body>
+
 <?php
 $strSQL = "SELECT * FROM announcement WHERE Classname = '".$Classname."' ORDER BY topicID DESC" or die("Error:" . mysqli_error()); 
 $objQuery = mysqli_query($objCon,$strSQL);
