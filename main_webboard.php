@@ -1,6 +1,7 @@
 <?php  session_start(); 
 $UserID=$_SESSION['UserID'];
 $Classname=$_SESSION['Classname'];
+$Classcode=$_SESSION['Classcode'];
 ?>
 <html>
 <head>
@@ -37,7 +38,7 @@ else
 	$Num_Pages =($Num_Rows/$Per_Page)+1;
 	$Num_Pages = (int)$Num_Pages;
 }
-$strSQL .=" WHERE Classname = '".$Classname."' order  by QuestionID DESC LIMIT $Page_Start , $Per_Page";
+$strSQL .=" WHERE Classcode = '".$Classcode."' order  by QuestionID DESC LIMIT $Page_Start , $Per_Page";
 $objQuery  = mysqli_query($objCon,$strSQL);
 ?>
 <table width="909" border="1">
