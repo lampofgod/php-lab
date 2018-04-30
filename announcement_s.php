@@ -1,6 +1,7 @@
 <?php  session_start(); 
 $UserID=$_SESSION['UserID'];
 $Classname=$_SESSION['Classname'];
+$Classcode=$_SESSION['Classcode'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,7 +19,7 @@ $Classname=$_SESSION['Classname'];
 	
 ?>
 <?php
-$strSQL = "SELECT * FROM announcement WHERE Classname = '".$Classname."' ORDER BY topicID DESC" or die("Error:" . mysqli_error()); 
+$strSQL = "SELECT * FROM announcement WHERE Classcode = '".$Classcode."' ORDER BY topicID DESC" or die("Error:" . mysqli_error()); 
 $objQuery = mysqli_query($objCon,$strSQL);
 while($row = mysqli_fetch_array($objQuery)) { 
 echo "<table border='1' align='center' width='500'>";
