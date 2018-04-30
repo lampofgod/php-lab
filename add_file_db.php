@@ -1,3 +1,8 @@
+<?php  session_start(); 
+$UserID=$_SESSION['UserID'];
+$Classname=$_SESSION['Classname'];
+$Classcode=$_SESSION['Classcode'];
+?>
 <meta charset="UTF-8">
 <?php
 include('connection.php'); 
@@ -16,8 +21,8 @@ $path_link="fileupload/".$newname;
 move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);  	
 	}
 	
-		$sql = "INSERT INTO uploadfile (fileupload) 
-		VALUES('$newname')";
+		$sql = "INSERT INTO uploadfile (fileupload,Classcode) 
+		VALUES('$newname','".$Classcode."')";
 		
 		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
 	
@@ -26,7 +31,7 @@ move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
 	if($result){
 	echo "<script type='text/javascript'>";
 	echo "alert('Upload File Succesfuly');";
-	echo "window.location = 'uploadfile.php'; ";
+	echo "window.location = 'file.php'; ";
 	echo "</script>";
 	}
 	else{
