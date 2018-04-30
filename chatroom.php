@@ -4,9 +4,10 @@ $UserID=$_SESSION['UserID'];
 $Classname=$_SESSION['Classname'];
 $txtName=$_SESSION['txtName'];
 $txtLastName=$_SESSION['txtLastName'];
+$Classcode=$_SESSION['Classcode'];
 include 'connection.php';
 
-$query = "SELECT * FROM shouts WHERE Classname = '".$Classname."' ORDER BY id DESC";
+$query = "SELECT * FROM shouts WHERE Classcode = '".$Classcode."' ORDER BY id DESC";
 $shouts = mysqli_query($con,$query);
 
 ?>
