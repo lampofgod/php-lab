@@ -35,7 +35,18 @@ session_start();
 <h3 align="right"><?php echo $objResult["txtName"];?>&nbsp;<?php echo $objResult["txtLastName"];?></h3>
 
 <h5 align="right">Classcode : <?php echo $_SESSION["Classcode"];?> Classname : <?php echo $_SESSION["Classname"];?></h5>
+<?php
+if($objResult["Status"] == "TEACHER"){
+	?>
+<a href="t_page.php" target="new"><p align="right">Home</a>
+<?php
+}
+else{
+?>
 <a href="s_page.php" target="new"><p align="right">Home</a>
+<?php
+}
+?>
 <a href="edit_profile.php" target="new">Edit</a>
   <a href="logout.php" target="new">Logout</p></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
