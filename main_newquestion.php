@@ -1,6 +1,7 @@
 <?php  session_start(); 
 $UserID=$_SESSION['UserID'];
 $Classname=$_SESSION['Classname'];
+$Classcode=$_SESSION['Classcode'];
 ?>
 <?php
 date_default_timezone_set('Asia/Bangkok');
@@ -9,9 +10,9 @@ if($_GET["Action"] == "Save")
 {
 	//*** Insert Question ***//
 	$strSQL = "INSERT INTO webboard ";
-	$strSQL .="(CreateDate,Question,Details,Name,Classname) ";
+	$strSQL .="(CreateDate,Question,Details,Name,Classcode) ";
 	$strSQL .="VALUES ";
-	$strSQL .="('".date("Y-m-d H:i:s")."','".$_POST["txtQuestion"]."','".$_POST["txtDetails"]."','".$_POST["txtName"]."','".$Classname."') ";
+	$strSQL .="('".date("Y-m-d H:i:s")."','".$_POST["txtQuestion"]."','".$_POST["txtDetails"]."','".$_POST["txtName"]."','".$Classcode."') ";
 	$objQuery = mysqli_query($objCon,$strSQL);
 	
 	//header("location:main_webboard.php");
