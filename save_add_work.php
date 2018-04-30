@@ -1,6 +1,7 @@
 <?php  session_start(); 
 $UserID=$_SESSION['UserID'];
 $Classname=$_SESSION['Classname'];
+$Classcode=$_SESSION['Classcode'];
 ?>
 <meta charset="UTF-8">
 <?php
@@ -31,8 +32,8 @@ $path_link="myfile/".$newname;
 move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);  	
 	}
 	
-		$sql = "INSERT INTO work (topic,content,fileupload,Classname,dateup) 
-		VALUES('".$_POST["topic"]."', '".$_POST["content"]."','$newname','".$Classname."','".$time."')";
+		$sql = "INSERT INTO work (topic,content,fileupload,Classcode,dateup) 
+		VALUES('".$_POST["topic"]."', '".$_POST["content"]."','$newname','".$Classcode."','".$time."')";
 		
 		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
 	
