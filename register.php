@@ -12,6 +12,7 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+        font-family: Cambria;
 }//botton color 
 </style>
 
