@@ -53,10 +53,10 @@ while($objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC))
 {
 ?>
   <tr>
-    <td bgcolor="#99CCCC"><div align="center"><?php echo $objResult["QuestionID"];?></div></td>
-    <td bgcolor="#99CCCC"><a href="main_viewwebboard.php?QuestionID=<?php echo $objResult["QuestionID"];?>"><?php echo $objResult["Question"];?></a></td>
-    <td bgcolor="#99CCCC"><?php echo $objResult["Name"];?></td>
-    <td bgcolor="#99CCCC"><div align="center"><?php echo $objResult["CreateDate"];?></div></td>
+    <td bgcolor="#E6E6FA"><div align="center"><?php echo $objResult["QuestionID"];?></div></td>
+    <td bgcolor="#E6E6FA"><a href="main_viewwebboard.php?QuestionID=<?php echo $objResult["QuestionID"];?>"><?php echo $objResult["Question"];?></a></td>
+    <td bgcolor="#E6E6FA"><?php echo $objResult["Name"];?></td>
+    <td bgcolor="#E6E6FA"><div align="center"><?php echo $objResult["CreateDate"];?></div></td>
   </tr>
 <?php
 }
