@@ -12,7 +12,6 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-        font-family: Cambria;
 }//botton color 
 </style>
 
@@ -26,26 +25,26 @@
       <tr>
         <td width="125"> &nbsp;Username</td>
         <td width="180">
-          <input name="txtUsername" type="text" id="txtUsername" size="20">
+          <input name="txtUsername" type="text" id="txtUsername" size="20" placeholder="Include a-z, A-Z, 0-9">
         </td>
       </tr>
       <tr>
         <td> &nbsp;Password</td>
-        <td><input name="txtPassword" type="password" id="txtPassword">
+        <td><input name="txtPassword" type="password" id="txtPassword" placeholder="Include a-z, A-Z, 0-9">
         </td>
       </tr>
       <tr>
         <td> &nbsp;Confirm Password</td>
-        <td><input name="txtConPassword" type="password" id="txtConPassword">
+        <td><input name="txtConPassword" type="password" id="txtConPassword" placeholder="Confirm Password">
         </td>
       </tr>
       <tr>
         <td>&nbsp;Name</td>
-        <td><input name="txtName" type="text" id="txtName" size="35"></td>
+        <td><input name="txtName" type="text" id="txtName" size="35" placeholder="First name"></td>
       </tr>
       <tr>
         <td> &nbsp;Last name</td>
-        <td><input name="txtLastname" type="text" id="txtLastname">
+        <td><input name="txtLastname" type="text" id="txtLastname" placeholder="Last name">
         </td>
       </tr>
       <tr>
@@ -57,17 +56,17 @@
       </tr>
       <tr>
         <td> &nbsp;Age</td>
-        <td><input name="intAge" type="text" id="intAge">
+        <td><input name="intAge" type="text" id="intAge" placeholder="Include only number">
         </td>
       </tr>
       <tr>
         <td> &nbsp;School / University</td>
-        <td><input name="txtUniversity" type="text" id="txtUniversity">
+        <td><input name="txtUniversity" type="text" id="txtUniversity" placeholder="School / University name">
         </td>
       </tr>
       <tr>
         <td> &nbsp;E-mail</td>
-        <td><input name="txtEmail" type="email" id="txtEmail">
+        <td><input name="txtEmail" type="email" id="txtEmail" placeholder="xxxxx@xxxxx.com">
         </td>
       </tr>
     </tbody>
