@@ -51,7 +51,7 @@ else{
 <a href="edit_profile.php" target="new">Edit</a>
   <a href="logout.php" target="new">Logout</p></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="announcement_s.php"target="mainFrame"> <input  type="submit" value="Announcement" align="center"    class="button" ></a>
+<a href="announcement_s.php"target="mainFrame"> <input  type="submit" value="Post" align="center"    class="button" ></a>
 <a href="calendar_s.php"target="mainFrame">			<input  type="submit" value="Calendar"		 align="center"    class="button" ></a>
 <a href="work_s.php"target="mainFrame">			<input type="submit" value="Work"		 align="center"    class="button" ></a>
 <a href="student_frame_s.php"target="mainFrame"><input type="submit" value="Student" 	 align="center"    class="button" ></a>
