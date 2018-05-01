@@ -32,7 +32,7 @@ if($_SESSION['UserID'] == "" or $_SESSION['Classname'] == "")
  }
   $Classname=$_SESSION['Classname'];
   $dateInput=$_SESSION['dateInput'];
-$objQuery = "SELECT * FROM student_check WHERE date(Date)='".$dateInput."' && Classname='".$Classname."' ORDER BY Date ASC" or die("Error:" . mysqli_error()); 
+$objQuery = "SELECT * FROM student_check,member WHERE student_check.UserID=member.UserID && date(Date)='".$dateInput."' && Classname='".$Classname."' ORDER BY Date ASC" or die("Error:" . mysqli_error()); 
 $objResult = mysqli_query($objCon, $objQuery); 
 echo "<p> <font size='7pt'> ตารางแสดงการเข้าเรียน ".$dateInput." </font></p>";
 echo "<table border='1' width='500'>";
@@ -53,5 +53,5 @@ while($row = mysqli_fetch_array($objResult)) {
 echo "</table>";
 mysqli_close($objCon);
 ?><br><br>
-<input type="button" align="left" value="Back" button onclick="location.href='teacherdate.php'"></body>
+<input type="button" align="left" value="Back" button onClick="location.href='teacherdate.php'"></body>
 </html>
