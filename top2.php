@@ -25,26 +25,25 @@ session_start();
     font-size: 16px;
     margin: -7px 2px;
     cursor: pointer;
-	font-family: Cambria;
-}//botton color 
+}//botton color
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
-<body bgcolor="#bde3ff"> 
-<h3 align="right"><?php echo $objResult["Status"];?>
-<h3 align="right"><?php echo $objResult["txtName"];?>&nbsp;<?php echo $objResult["txtLastName"];?></h3>
+<body bgcolor="#bde3ff">
+<h3 align="left"><?php echo $objResult["Status"];?>
+<h3 align="left"><?php echo $objResult["txtName"];?>&nbsp;<?php echo $objResult["txtLastName"];?></h3>
 <?php
 $strSQL2 = "SELECT * FROM classroom WHERE Classcode = '".$_GET["Classcode"]."' ";
 $objQuery2 = mysqli_query($objCon,$strSQL2) or die ("Error Query [".$strSQL2."]");
 $objResult2 = mysqli_fetch_array($objQuery2);
-?>	
-<h5 align="right">Classcode : <?php echo $_SESSION["Classcode"];?> Classname : <?php echo $_SESSION["Classname"];?></h5>
+?>
+<h5 align="left">Classcode : <?php echo $_SESSION["Classcode"];?> Classname : <?php echo $_SESSION["Classname"];?></h5>
 <a href="t_page.php" target="new"><p align="right">Home</a>
 <a href="edit_profile.php" target="new">Edit</a>
   <a href="logout.php" target="new">Logout</p></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="announcement.php"target="mainFrame">		<input type="submit"  value="Post" align="center"    class="button" "></a>
+<a href="announcement.php"target="mainFrame">		<input type="submit"  value="Announcement" align="center"    class="button" "></a>
 <a href="calendar.php"target="mainFrame">		<input type="submit" value="Calendar"		 align="center"    class="button" ></a>
 <a href="work.php"target="mainFrame">			<input  type="submit" value="Work"		 align="center"    class="button" ></a>
 <a href="student_frame.php"target="mainFrame">		<input type="submit" value="Student" 	 align="center"    class="button" ></a>
@@ -54,4 +53,3 @@ $objResult2 = mysqli_fetch_array($objQuery2);
 <a href="main_webboard.php"target="mainFrame">		<input type="submit" value="Blog" 		 align="center"    class="button" ></a>
 </body>
 </html>
-

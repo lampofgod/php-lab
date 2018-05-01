@@ -3,23 +3,37 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Add Classes</title>
+<style>
+	table { text-align: center;}
+	.button {
+	    background-color: #0e5285;
+	    border: none;
+	    color: white;
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: 4px 2px;
+	    cursor: pointer;
+</style>
 
 </head>
 
-<body bgcolor="#4863A0">
+<body bgcolor="#98AFC7">
 
 <div align="center">
 <table>
 	<tr>
 		<td bgcolor="#C7C6C4" width="400" height="30"><font face="cambria"><b>Add a Classes</b></font></td>
 	</tr>
-	<tr>	
+	<tr>
 		<td bgcolor="#F9F8F6" width="400" height="150">
 			<form name="form1" method="post" action="save_class.php">
 			<font face="cambria">Enter your class code</font>
 			<input name="Classcode" type="text" id="Classcode">
-			<br><br><input type="submit" name="Submit" value="Add Class"></td>
+			<br><br><input type="submit" name="Submit" value="Add Class" class="button"></td>
 	</tr>
 </table>
 </div>

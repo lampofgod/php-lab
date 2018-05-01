@@ -25,26 +25,26 @@
       <tr>
         <td width="125"> &nbsp;Username</td>
         <td width="180">
-          <input name="txtUsername" type="text" id="txtUsername" size="20" placeholder="Include a-z, A-Z, 0-9">
+          <input name="txtUsername" type="text" id="txtUsername" size="20">
         </td>
       </tr>
       <tr>
         <td> &nbsp;Password</td>
-        <td><input name="txtPassword" type="password" id="txtPassword" placeholder="Include a-z, A-Z, 0-9">
+        <td><input name="txtPassword" type="password" id="txtPassword">
         </td>
       </tr>
       <tr>
         <td> &nbsp;Confirm Password</td>
-        <td><input name="txtConPassword" type="password" id="txtConPassword" placeholder="Confirm Password">
+        <td><input name="txtConPassword" type="password" id="txtConPassword">
         </td>
       </tr>
       <tr>
         <td>&nbsp;Name</td>
-        <td><input name="txtName" type="text" id="txtName" size="35" placeholder="First name"></td>
+        <td><input name="txtName" type="text" id="txtName" size="35"></td>
       </tr>
       <tr>
         <td> &nbsp;Last name</td>
-        <td><input name="txtLastname" type="text" id="txtLastname" placeholder="Last name">
+        <td><input name="txtLastname" type="text" id="txtLastname">
         </td>
       </tr>
       <tr>
@@ -56,17 +56,17 @@
       </tr>
       <tr>
         <td> &nbsp;Age</td>
-        <td><input name="intAge" type="text" id="intAge" placeholder="Include only number">
+        <td><input name="intAge" type="text" id="intAge">
         </td>
       </tr>
       <tr>
         <td> &nbsp;School / University</td>
-        <td><input name="txtUniversity" type="text" id="txtUniversity" placeholder="School / University name">
+        <td><input name="txtUniversity" type="text" id="txtUniversity">
         </td>
       </tr>
       <tr>
         <td> &nbsp;E-mail</td>
-        <td><input name="txtEmail" type="email" id="txtEmail" placeholder="xxxxx@xxxxx.com">
+        <td><input name="txtEmail" type="email" id="txtEmail">
         </td>
       </tr>
     </tbody>

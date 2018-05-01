@@ -25,33 +25,21 @@ session_start();
     font-size: 16px;
     margin: -7px 2px;
     cursor: pointer;
-	font-family: Cambria;
-}//botton color 
+}//botton color
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
-<body bgcolor="#bde3ff"> 
-<h3 align="right"><?php echo $objResult["Status"];?>
-<h3 align="right"><?php echo $objResult["txtName"];?>&nbsp;<?php echo $objResult["txtLastName"];?></h3>
+<body bgcolor="#bde3ff">
+<h3 align="left"><?php echo $objResult["Status"];?>
+<h3 align="left"><?php echo $objResult["txtName"];?>&nbsp;<?php echo $objResult["txtLastName"];?></h3>
 
 <h5 align="right">Classcode : <?php echo $_SESSION["Classcode"];?> Classname : <?php echo $_SESSION["Classname"];?></h5>
-<?php
-if($objResult["Status"] == "TEACHER"){
-	?>
-<a href="t_page.php" target="new"><p align="right">Home</a>
-<?php
-}
-else{
-?>
 <a href="s_page.php" target="new"><p align="right">Home</a>
-<?php
-}
-?>
 <a href="edit_profile.php" target="new">Edit</a>
   <a href="logout.php" target="new">Logout</p></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="announcement_s.php"target="mainFrame"> <input  type="submit" value="Post" align="center"    class="button" ></a>
+<a href="announcement_s.php"target="mainFrame"> <input  type="submit" value="Announcement" align="center"    class="button" ></a>
 <a href="calendar_s.php"target="mainFrame">			<input  type="submit" value="Calendar"		 align="center"    class="button" ></a>
 <a href="work_s.php"target="mainFrame">			<input type="submit" value="Work"		 align="center"    class="button" ></a>
 <a href="student_frame_s.php"target="mainFrame"><input type="submit" value="Student" 	 align="center"    class="button" ></a>

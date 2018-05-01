@@ -1,4 +1,4 @@
-<?php  session_start(); 
+<?php  session_start();
 $UserID=$_SESSION['UserID'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -7,9 +7,9 @@ $UserID=$_SESSION['UserID'];
 <style>
 div{
 	width: 800px;
-	height: 300px;
+	height: 450px;
 	border: 3px solid #0e5285;
-	background-color: white;
+	background-color: #FFFFF0 ;
 }//table
 .button {
     background-color: #0e5285;
@@ -23,7 +23,7 @@ div{
     margin: 4px 2px;
     cursor: pointer;
 }//botton color
-h3{
+h1{
 	font-style: bold;
 	color: #0e5285;
 }
@@ -32,17 +32,17 @@ h3{
 <title>Untitled Document</title>
 </head>
 
-<body bgcolor="#bde3ff">
+<body bgcolor="#98AFC7">
 
 <form name="form1" method="post" action="save_create_class.php">
 
 <center><div><br>
 
-<h3>Create class</h3>
-Enter Classcode <br /><input name="Classcode" type="text" id="Classcode" size="6"><br />
-Class name <br /><input name="Classname" type="text" id="Classname" size="100"><br />
-About class <br /><input name="Aboutclass" type="text" id="Aboutclass" size="100"><br />
-<input type="submit" name="Submit" value="Save"></form>
+<h1>Create class</h1>
+Enter Classcode <br /><input name="Classcode" type="text" id="Classcode" size="40"><br />
+Class name <br /><input name="Classname" type="text" id="Classname" size="40"><br />
+About class <br /><TEXTAREA NAME=address type="text" id="Aboutclass" ROWs=6 COLS=40></TEXTAREA><br />
+<input type="submit" name="Submit" value="Save" class="button"></form>
 
 </body>
 </html>

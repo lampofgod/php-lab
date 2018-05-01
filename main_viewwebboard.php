@@ -44,13 +44,13 @@ $objQuery = mysqli_query($objCon,$strSQL);
 ?>
 <table width="738" border="1" cellpadding="1" cellspacing="1">
   <tr>
-    <td colspan="2" bgcolor="#ffffff"><center><h1><?php echo $objResult["Question"];?></h1></center></td>
+    <td colspan="2" bgcolor="#006699"><center><h1><?php echo $objResult["Question"];?></h1></center></td>
   </tr>
   <tr>
     <td height="53" colspan="2" bgcolor="#99CCCC"><?php echo nl2br($objResult["Details"]);?></td>
   </tr>
   <tr>
-    <td width="397"  bgcolor="#ffffff">Name : <?php echo $objResult["Name"];?> Create Date : <?php echo $objResult["CreateDate"];?></td>
+    <td width="397"  bgcolor="#006699">Name : <?php echo $objResult["Name"];?> Create Date : <?php echo $objResult["CreateDate"];?></td>
   </tr>
 </table>
 <br>
@@ -65,7 +65,7 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
 ?> No : <?php echo $intRows;?>
 <table width="738" border="1" cellpadding="1" cellspacing="1">
   <tr>
-    <td height="53" colspan="2" bgcolor="#ffffff"><?php echo nl2br($objResult2["Details"]);?></td>
+    <td height="53" colspan="2" bgcolor="#006699"><?php echo nl2br($objResult2["Details"]);?></td>
   </tr>
   <tr>
     <td width="397" bgcolor="#99CCCC">Name :
@@ -87,8 +87,8 @@ while($objResult2 = mysqli_fetch_array($objQuery2))
       <td><textarea name="txtDetails" cols="50" rows="5" id="txtDetails"></textarea></td>
     </tr>
     <tr>
-      <td width="78" bgcolor="#ffffff">Name</td>
-      <td width="647" bgcolor="#ffffff"><input name="txtName" type="text" id="txtName" value="" size="50"></td>
+      <td width="78" bgcolor="#006699">Name</td>
+      <td width="647" bgcolor="#006699"><input name="txtName" type="text" id="txtName" value="" size="50"></td>
     </tr>
   </table>
   <div class="g-recaptcha" data-sitekey="6LeZplQUAAAAALXszTnH_i87575bZCALARGj7pG4"></div>
