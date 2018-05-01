@@ -8,13 +8,11 @@ session_start();
  }
  	$UserID=$_SESSION['UserID'];
  	$Classname=$_SESSION['Classname'];
- 	$Name=$_SESSION['txtName'];
- 	$LastName=$_SESSION['txtLastName'];
  	//$strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
  	//$objQuery = mysqli_query($objConnect,$strSQL);
  	//$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 
-	$SQL = "INSERT INTO student_check (UserID,Classname,txtName,txtLastName,Seat,Date) VALUES ('".$UserID."','".$Classname."','".$Name."','".$LastName."','".$_POST["txtSeat"]."',DATE_ADD(Now(), INTERVAL 7 HOUR))" or die("Error:" . mysqli_error());;
+	$SQL = "INSERT INTO student_check (UserID,Classname,Seat,Date) VALUES ('".$UserID."','".$Classname."','".$_POST["txtSeat"]."',DATE_ADD(Now(), INTERVAL 7 HOUR))" or die("Error:" . mysqli_error());;
 	$objQ = mysqli_query($objCon,$SQL);
 	mysqli_close($objCon);
 	//mysqli_close($objConnect);
