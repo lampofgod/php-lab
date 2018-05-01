@@ -20,8 +20,7 @@
 //$strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
   //$objQuery = mysqli_query($objConnect,$strSQL);
   //$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
-
-$objQ = "SELECT * FROM student_check WHERE UserID='".$UserID."' && Classname='".$Classname."' ORDER BY Date ASC" or die("Error:" . mysqli_error()); 
+$objQ = "SELECT * FROM student_check,member WHERE student_check.UserID='".$UserID."'&& member.UserID='".$UserID."' && Classname='".$Classname."' ORDER BY Date ASC" or die("Error:" . mysqli_error()); 
 $objR = mysqli_query($objCon, $objQ); 
 echo "<p> <font size='7pt'> ตารางแสดงการประวัติเข้าเรียนของID ".$UserID." </font></p>";
 echo "<table border='1' width='500'>";
