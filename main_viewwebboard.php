@@ -44,13 +44,13 @@ $objQuery = mysqli_query($objCon,$strSQL);
 ?>
 <table width="738" border="1" cellpadding="1" cellspacing="1">
   <tr>
-    <td colspan="2" bgcolor="#006699"><center><h1><?php echo $objResult["Question"];?></h1></center></td>
+    <td colspan="2" bgcolor="#ffffff"><center><h1><?php echo $objResult["Question"];?></h1></center></td>
   </tr>
   <tr>
     <td height="53" colspan="2" bgcolor="#99CCCC"><?php echo nl2br($objResult["Details"]);?></td>
   </tr>
   <tr>
-    <td width="397"  bgcolor="#006699">Name : <?php echo $objResult["Name"];?> Create Date : <?php echo $objResult["CreateDate"];?></td>
+    <td width="397"  bgcolor="#ffffff">Name : <?php echo $objResult["Name"];?> Create Date : <?php echo $objResult["CreateDate"];?></td>
   </tr>
 </table>
 <br>
