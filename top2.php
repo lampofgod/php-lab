@@ -25,6 +25,7 @@ session_start();
     font-size: 16px;
     margin: -7px 2px;
     cursor: pointer;
+	font-family: Cambria;
 }//botton color 
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
